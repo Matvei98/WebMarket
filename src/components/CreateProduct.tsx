@@ -39,11 +39,12 @@ export function CreateProduct({ onCreate }: CreateProductProps) {
     onCreate(response.data)
   }
   
-
-  const changeHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    setValue(event.target.value)
+  
+  const changeHandler = (event: React.KeyboardEvent) => {
+    const target = event.target as HTMLInputElement;
+    setValue(target.value)
   }
-
+  
   return (
     <form onSubmit={submitHandler}>
       <input
