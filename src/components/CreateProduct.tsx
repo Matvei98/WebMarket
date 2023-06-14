@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {ChangeEventHandler, useState} from 'react'
 import {IProduct} from '../models'
 import axios from 'axios'
 import {ErrorMessage} from './ErrorMessage'
@@ -39,11 +39,14 @@ export function CreateProduct({ onCreate }: CreateProductProps) {
     onCreate(response.data)
   }
   
-  
-  const changeHandler = (event: React.KeyboardEvent) => {
-    const target = event.target as HTMLInputElement;
-    setValue(target.value)
-  }
+  const changeHandler: ChangeEventHandler<HTMLInputElement> = (event) => {
+    setValue(event.target.value);
+ };
+
+/* const changeHandler = (event: React.KeyboardEvent) => {
+const target = event.target as HTMLInputElement;
+setValue(target.value);
+} */
   
   return (
     <form onSubmit={submitHandler}>
