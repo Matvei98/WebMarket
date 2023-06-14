@@ -12,12 +12,13 @@ const productData: IProduct =  {
   rating: {
     rate: 42,
     count: 10
-  }
+  },
 }
 
 interface CreateProductProps {
   onCreate: (product: IProduct) => void
 }
+
 
 export function CreateProduct({ onCreate }: CreateProductProps) {
   const [value, setValue] = useState('')
@@ -37,6 +38,7 @@ export function CreateProduct({ onCreate }: CreateProductProps) {
 
     onCreate(response.data)
   }
+  
 
   const changeHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
     setValue(event.target.value)
