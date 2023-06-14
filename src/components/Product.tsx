@@ -1,10 +1,12 @@
 import React from 'react';
-import { IProduct } from '../models';
 import {useState} from 'react';
+import { IProduct } from '../models';
+
 
 interface ProductProps {
 	product:IProduct
 }
+
 export function Product({product}:ProductProps){
 const [details,setDetails] = useState(false)
 const btnBgClassName = details ? 'bg-yellow-400' : 'bg-blue-400'
